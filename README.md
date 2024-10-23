@@ -6,7 +6,6 @@ A complete step-by-step guide to installing **Frappe** and **ERPNext** on Ubuntu
 - [Requirements](#requirements)
 - [Installation Steps](#installation-steps)
 - [Installing ERPNext](#installing-erpnext)
-- [SEO Optimization](#seo-optimization)
 
 ## Requirements
 
