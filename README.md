@@ -151,6 +151,12 @@ sudo apt-get install xvfb libfontconfig wkhtmltopdf
 ### Step 15: Install Frappe Bench
 
 ```bash
+sudo -H pip3 install frappe-bench
+
+bench --version
+
+if its not work than use it
+
 sudo apt install python3-venv
 python3 -m venv frappe-bench-env
 source frappe-bench-env/bin/activate
