@@ -155,7 +155,7 @@ sudo -H pip3 install frappe-bench
 
 bench --version
 
-if its not work than use it
+#if its not work than use it
 
 sudo apt install python3-venv
 python3 -m venv frappe-bench-env
