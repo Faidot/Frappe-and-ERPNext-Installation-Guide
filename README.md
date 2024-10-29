@@ -25,14 +25,14 @@ sudo apt update
 ### Step 2: Install Python 3.11
 
 ```bash
-sudo apt install python3.11
-python3.11 --version  # Verify installation
+sudo apt install python3.12
+python3.12 --version  # Verify installation
 ```
 
 ### Step 3: Install Python 3.11 Full
 
 ```bash
-sudo apt install python3.11-full
+sudo apt install python3.12-full
 ```
 
 ### Step 4: Install Git
@@ -167,23 +167,80 @@ bench --version
 ### Step 16: Initialize Frappe Bench
 
 ```bash
-bench init frappe-bench --frappe-branch version-15 --python python3.11
+bench init frappe-bench
+OR
+bench init frappe-bench --frappe-branch version-15 --python python3.12
+
 cd frappe-bench/
 bench start
 ```
 
 Congratulations! Frappe is now installed.
 
-## Installing ERPNext on Frappe
+### Step 17: Initialize Frappe Bench
 
-### Step 1: Create a New Frappe Site
+```bash
+bench find .
+/home/frappe/frappe-bench is a bench directory!
+```
+### Step 18: Create An App
+```
+bench new-app [App_Name]
+
+App Title (default: [App_Name):
+App Description: 
+App Publisher: Mr. Faizan
+App Email: faizan@example.com
+App Icon (default 'octicon octicon-file-directory'):
+App Color (default 'grey'):
+App License (default 'MIT'):
+
+Installing library_management
+$ ./env/bin/pip install -q -U -e ./apps/library_management
+$ bench build --app library_management
+yarn run v1.22.4
+$ FRAPPE_ENV=production node rollup/build.js --app library_management
+Production mode
+✔ Built js/moment-bundle.min.js
+✔ Built js/libs.min.js
+✨  Done in 1.95s.
+```
+
+
+
+### Step 19: Create a New Frappe Site
 
 ```bash
 bench new-site [your-site-name]
 bench --site [your-site-name] add-to-hosts
 ```
 
-### Step 2: Get and Install ERPNext
+### Step 20: App add in site
+
+```bash
+bench --site library.localhost install-app library_management
+
+Installing library_management..
+
+bench --site library.localhost list-apps
+```
+
+### Step 21: Enable Developer Mode For Creating Doctype 
+```bash
+bench set-config -g developer_mode true
+bench start
+```
+
+
+
+
+
+
+
+
+
+## IF Installing ERPNext on Frappe
+### Step 1: Get and Install ERPNext
 
 ```bash
 bench get-app erpnext --branch version-15
