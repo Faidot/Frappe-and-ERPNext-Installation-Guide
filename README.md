@@ -56,7 +56,7 @@ sudo apt-get install python3-setuptools python3-pip
 ### Step 7: Set Up a Python Virtual Environment
 
 ```bash
-sudo apt install python3.11-venv
+sudo apt install python3.12-venv
 ```
 
 ### Step 8: Install MariaDB
