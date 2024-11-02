@@ -64,6 +64,7 @@ sudo apt install python3.12-venv
 ```bash
 sudo apt-get install software-properties-common
 sudo apt install mariadb-server
+sudo systemctl status mariadb
 sudo mysql_secure_installation
 ```
 - When prompted for the root password, press ENTER if not set.
@@ -152,7 +153,8 @@ sudo apt-get install xvfb libfontconfig wkhtmltopdf
 
 ```bash
 sudo -H pip3 install frappe-bench
-
+#OR
+sudo -H pip3 install frappe-bench --break-system-packages
 bench --version
 
 #if its not work than use it
@@ -248,6 +250,8 @@ bench get-app erpnext --branch version-15
 bench get-app https://github.com/frappe/erpnext --branch version-15
 
 bench --site [your-site-name] install-app erpnext
+bench --site [your-site-name] migrate
+
 bench start
 ```
 
