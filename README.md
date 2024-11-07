@@ -230,6 +230,8 @@ bench --site library.localhost list-apps
 ### Step 21: Enable Developer Mode For Creating Doctype 
 ```bash
 bench set-config -g developer_mode true
+bench --site <your-site-name> set-config developer_mode 1
+bench --site <your-site-name> clear-cache
 bench start
 ```
 
